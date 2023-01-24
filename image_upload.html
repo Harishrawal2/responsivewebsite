@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About</title>
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="img_upoad.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="image_upload.html">Img Upload</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+  <main>
+    <section>
+        <div class="container">
+            <h1>Image Upload</h1>
+            <form id="upload-form">
+              <div class="form-group">
+                <label for="image-file">Select an image:</label>
+                <input type="file" id="image-file" accept="image/*">
+              </div>
+              <button type="submit" class="btn" style="margin-top: 10px; font-size: larger;">Upload</button>
+            </form>
+            <div id="uploaded-image"></div>
+          </div>
+    </section>
+  </main>
+  
+  <footer style="background-color: #333; color: white; text-align: center; padding: 10px 20px;">
+    <p>Copyright 2021 My Website</p>
+  </footer>
+
+          <script src="js/script.js"></script>
+
+</body>
+</html>

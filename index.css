@@ -1,0 +1,188 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  margin: 0 10px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #eee;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.hero button {
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #333;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.features {
+  margin-top: 10px;
+}
+
+.services_section {
+  display: flex;
+  justify-content: space-between;
+}
+.feature {
+  width: 28%;
+  background-color: #eee;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.feature h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.feature p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* Blog post */
+
+.blogs {
+  margin-bottom: 20px;
+}
+
+.blogs h1 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.blog {
+  margin-bottom: 20px;
+}
+
+.blog h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.blog p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.blog button {
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #333;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: greenyellow;
+}
+
+/* Skills */
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.skill-name {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.skill-level {
+  width: 100%;
+  height: 20px;
+  background-color: lightgray;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.skill-level-fill {
+  height: 100%;
+  background-color: steelblue;
+  transition: width 0.8s;
+}
+
+
+/* card */
+/* CSS for the card layout and styling */
+.card {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card img {
+  height: 120px;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+button{
+        cursor: pointer;
+        background-color: #333;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;"
+}

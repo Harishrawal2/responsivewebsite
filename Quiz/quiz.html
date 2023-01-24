@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Website</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="quiz.css">
+</head>
+
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../image_upload.html">Img Upload</a></li>
+        <li><a href="../blogPost.html">Blog</a></li>
+        <li><a href="../Quiz/quiz.html">Quiz</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="Account.html">Acount</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <header style="background-color: gray;
+  color: white;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;">
+    <h1>Database Management System</h1>
+  </header>
+    
+<main>
+    <section>
+        <div id="quiz">
+            <h2>1) Which of the following is generally used for performing tasks like creating the structure of the relations, deleting relation?</h2>
+            <form>
+              <label><input type="radio" name="answer" value="1">DDL(Data Definition Language)</label>
+              <label><input type="radio" name="answer" value="2">ML(Data Manipulation Language)</label>
+              <label><input type="radio" name="answer" value="3">Relational Schema</label>
+              <label><input type="radio" name="answer" value="4">Query
+            </label>
+              <button type="button" id="submit-button" style="margin-top: 10px; border-radius: 10px;">Submit</button>
+            </form>
+            
+          </div>
+
+          
+
+          <div id="results">
+            <h2>Results</h2>
+            <div id="correct-answers">Correct Answers: <span>0</span></div>
+            <div id="incorrect-answers">Incorrect Answers: <span>0</span></div>
+          </div>
+    </section>
+</main>
+
+  <footer style="background-color: #333; color: white; text-align: center; padding: 10px 20px;">
+
+    <p>Copyright 2021 My Website</p>
+
+
+  </footer>
+
+  <!-- script -->
+  <script src="quiz.js"></script>
+</body>
+
+</html>

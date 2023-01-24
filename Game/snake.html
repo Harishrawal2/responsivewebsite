@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Snake Game</title>
+    <style>
+        /* Styles for the game canvas */
+        canvas {
+            border: 1px solid black;
+            margin: auto;
+            display: block;
+        }
+
+        /* Styles for the game score */
+        .score {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="../Game/game.html" style=" font-size: 30px;">Back Game Page</a>
+        <h1>Snake Game</h1>
+    </header>
+    <main>
+        <section>
+            <canvas id="game-canvas" width="400" height="400"></canvas>
+        <div class="score">Score: <span id="score">0</span></div>
+       
+        </section>
+
+    </main>
+    <footer style="background-color: #333; color: white; text-align: center; padding: 10px 20px;">
+
+        <p>Copyright 2021 My Website</p>
+    
+      </footer>
+    <script>
+        // Initialize variables
+        const canvas = document.getElementById('game-canvas');
+        const ctx = canvas.getContext('2d');
+        let snake = [{ x: 150, y: 150 }, { x: 140, y: 150 }, { x: 130, y: 150 }, { x: 120, y: 150 }, { x: 110, y: 150 }];
+        let dx = 10;
+        let dy = 0;
+        let food = { x: 300, y: 300 };
+        let score = 0;
+        let scoreSpan = document.getElementById('score');
+
+        // Draw a square on the canvas
+        function drawSquare(x, y, size) {
+            ctx.fillRect(x, y, size, size);
+        }
+
+        // Draw the snake on the canvas
+        function drawSnake() {
+            snake.forEach(segment => {
+                drawSquare(segment.x, segment.y, 10);
+            });
+        }
+
+        // Move the snake
+        function moveSnake() {
+            // Add a new head to the snake
+            const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+            snake.unshift(head);
+
+            // Check if the snake has eaten the food
+            const distance = Math.hypot(head.x - food.x, head.y - food.y);
+            if (distance < 10) {
+                // Generate a new food position
+                food = {
+                    x: Math.floor(Math.random() * 39) * 10,
+                    y: Math.floor(Math.random() * 39) * 10
+                };
+                score++;
+                scoreSpan.textContent = score;
+            } else {
+                // Remove the tail of the snake
+                snake.pop();
+            }
+        }
+
+
+
+        // Check if the snake has collided with itself or the walls
+        function checkCollision() {
+            // Check if the snake has collided with itself
+            const snakeBody = snake.slice(1);
+            if (snakeBody.some(segment => segment.x === snake[0].x && segment.y === snake[0].y)) {
+                alert('Game over!');
+                window.location.reload();
+            }
+
+            // Check if the snake has collided with the walls
+            if (snake[0].x < 0 || snake[0].x > 390 || snake[0].y < 0 || snake[0].y > 390) {
+                alert('Game over!');
+                window.location.reload();
+            }
+        }
+
+        // Draw the food on the canvas
+        function drawFood() {
+            drawSquare(food.x, food.y, 10);
+        }
+
+        // Clear the canvas
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // Main game loop
+        function gameLoop() {
+            setTimeout(() => {
+                clearCanvas();
+                moveSnake();
+                drawFood();
+                drawSnake();
+                checkCollision();
+                gameLoop();
+            }, 100);
+        }
+        gameLoop();
+
+        // Handle arrow keys for snake movement
+        document.addEventListener('keydown', event => {
+            switch (event.code) {
+                case 'ArrowUp':
+                    dx = 0;
+                    dy = -10;
+                    break;
+                case 'ArrowDown':
+                    dx = 0;
+                    dy = 10;
+                    break;
+                case 'ArrowLeft':
+                    dx = -10;
+                    dy = 0;
+                    break;
+                case 'ArrowRight':
+                    dx = 10;
+                    dy = 0;
+                    break;
+            }
+        });
+
+       
+
+
+    </script>
+</body>
+
+</html>

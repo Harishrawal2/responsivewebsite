@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="image_upload.html">Img Upload</a></li>
+        <li><a href="contact.html">Contact</a></li>
+
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="contact">
+      <h1>Contact Us</h1>
+      <form>
+        <label for="name">Name:</label><br>
+        <input type="text" placeholder="Enter Your Name" id="name" name="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" placeholder="Enter your Email Address" id="email" name="email"><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" placeholder="Send me Message" name="message"></textarea><br>
+        <input type="submit" value="Submit">
+      </form> 
+    </section>
+  </main>
+  <footer style="background-color: #333; color: white; text-align: center; padding: 10px 20px;">
+    <p>Copyright 2021 My Website</p>
+  </footer>
+
+  <script>
+    const form = document.querySelector('form');
+form.addEventListener('submit', function(event) {
+  // Prevent the form from being submitted
+  event.preventDefault();
+
+  // Get the input fields
+  const name = document.querySelector('#name');
+  const email = document.querySelector('#email');
+  const message = document.querySelector('#message');
+
+  // Log the form data to the console
+  console.log(name.value, email.value, message.value);
+  
+  // Validate the input fields
+  if (name.value === '' || email.value === '' || message.value === '') {
+    // Display an error message if any of the fields are empty
+    alert('All fields are required!');
+  } else {
+    // Submit the form if the input is valid
+    form.submit();
+  }
+});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Website</title>
+  <link rel="stylesheet" href="../index.css">
+</head>
+
+<style>
+  main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+#login,
+#register {
+  width: 400px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+#login h2,
+#register h2 {
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+form label {
+  margin-bottom: 10px;
+}
+
+form input{
+  background-color: gray;
+  
+}
+
+form input,
+form button {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+</style>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../image_upload.html">Img Upload</a></li>
+        <li><a href="../blogPost.html">Blog</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="Account.html">Acount</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+      <div id="login">
+        <h2>Login</h2>
+    <h2>Welcome to Login Account</h2>
+        <form>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password">
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <div id="register">
+        <h2>Register</h2>
+    <h2>Welcome to Login Account</h2>
+
+        <form>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password">
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    
+  </main>
+
+  <footer style="background-color: #333; color: white; text-align: center; padding: 10px 20px;">
+
+    <p>Copyright 2021 My Website</p>
+
+
+  </footer>
+</body>
+
+</html>

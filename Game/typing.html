@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="quiz.css">
+  <title>Word Typing Game</title>
+  
+</head>
+
+<style>
+
+
+  </style>
+<body>
+    <header>
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../image_upload.html">Img Upload</a></li>
+            <li><a href="../blogPost.html">Blog</a></li>
+            <li><a href="../Quiz/quiz.html">Quiz</a></li>
+            <li><a href="game.html">Game</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="Account.html">Acount</a></li>
+    
+          </ul>
+        </nav>
+      </header>
+
+<main>
+    <section style="text-align: center;">
+        <h1>Typing Speed Game</h1>
+        <p>A typing speed game is a computer program or online game that tests and measures a person's typing speed and accuracy. These games usually involve typing out a series of words or sentences as quickly and accurately as possible within a certain time limit. The player's typing speed is then measured in words per minute (WPM) or characters per minute (CPM).</p>
+        <div id="game">
+            <div id="word-display" style="color: black; font-size: 30px;">
+              <!-- The word to be typed will be displayed here -->
+            </div>
+          
+            <form id="typing-form">
+              <input style="font-size: 20px;" type="text" id="typing-input" placeholder="Start typing test">
+              <button type="submit" style="border-radius: 10px;">Submit</button>
+            </form>
+          
+            <div id="game-stats">
+              <div id="correct-words">Correct Words: 0</div>
+              <div id="incorrect-words">Incorrect Words: 0</div>
+            </div>
+          </div>
+          
+       
+          
+    </section>
+</main>
+
+  <footer style="background-color: #333; color: white; text-align: center; padding: 10px 20px;">
+
+    <p>Copyright 2021 My Website</p>
+
+  </footer>
+
+  <script>
+   
+   const form = document.getElementById('typing-form');
+const input = document.getElementById('typing-input');
+const correctWords = document.getElementById('correct-words');
+const incorrectWords = document.getElementById('incorrect-words');
+
+// Set up an array of words to use in the game
+const words = ['apple', 'banana', 'orange', 'grape', 'strawberry'];
+
+let currentWordIndex = 0;
+
+form.addEventListener('submit', checkAnswer);
+
+function checkAnswer(event) {
+  event.preventDefault();
+
+  const typedWord = input.value;
+  const correctWord = words[currentWordIndex];
+
+  if (typedWord === correctWord) {
+    correctWords.textContent = `Correct Words: ${parseInt(correctWords.textContent.split(': ')[1]) + 1}`;
+  } else {
+    incorrectWords.textContent = `Incorrect Words: ${parseInt(incorrectWords.textContent.split(': ')[1]) + 1}`;
+  }
+
+  // Reset the input field and move on to the next word
+  input.value = '';
+  currentWordIndex = (currentWordIndex + 1) % words.length;
+  displayWord();
+}
+
+function displayWord() {
+  const wordDisplay = document.getElementById('word-display');
+  wordDisplay.textContent = words[currentWordIndex];
+}
+
+displayWord();
+
+  </script>
+</body>
+
+</html>

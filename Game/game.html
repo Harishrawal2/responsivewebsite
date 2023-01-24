@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Website</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="quiz.css">
+</head>
+
+<style>
+    /* Default styles */
+    body {
+      font-size: 16px;
+    }
+
+    /* Styles for screens smaller than 480px */
+    @media (max-width: 480px) {
+      body {
+        font-size: 14px;
+      }
+    }
+
+    /* Styles for screens larger than 768px */
+    @media (min-width: 768px) {
+      body {
+        font-size: 18px;
+      }
+    }
+  </style>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../image_upload.html">Img Upload</a></li>
+        <li><a href="../blogPost.html">Blog</a></li>
+        <li><a href="../Quiz/quiz.html">Quiz</a></li>
+        <li><a href="game.html">Game</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="Account.html">Acount</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <header style="background-color: gray;
+  color: white;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;">
+    <h1>Play Online Game</h1>
+  </header>
+    
+
+  <main>
+    <section style="display: flex; justify-content: space-between;">
+      <!-- HTML for the first card -->
+      <div class="card">
+        <img src="/images/snake.jpg" alt="Card image">
+        <div class="card-content">
+          <h2>Snake Game</h2>
+          <p>Many people enjoy playing the snake game because it is simple to learn and play, but also offers a challenging and engaging gameplay experience. The game's controls are typically easy to use, and the gameplay can be both fast-paced and strategic, requiring players to think ahead and make quick decisions</p>
+        </div>
+        <button> <a href="snake.html" style="text-decoration: none; display: block; color: white;">Play</a></button>
+      </div>
+
+      <!-- second card  -->
+      <div class="card">
+        <img src="/images/voice.jpg" alt="Card image">
+        <div class="card-content">
+          <h2>Voice Sentance </h2>
+          <p>Voice sentence games can be a useful tool for improving listening and transcription skills, and can be particularly helpful for people who work in fields where these skills are important, such as transcriptionists, court reporters, and language professionals Voice sentances and Play game the write and listen to the sentances</p>
+        </div>
+        <button > <a href="ludo.html" style="text-decoration: none; display: block; color: white;">Play Ludo</a></button>
+      </div>
+
+      <!-- third card  -->
+      <div class="card">
+        <img src="/images/typing.jpg" alt="Card image">
+        <div class="card-content">
+          <h2>Typing test Yourself </h2>
+          <p>Typing speed games can be a fun and engaging way to improve typing skills and speed. They are often used by students and professionals as a way to practice and improve their typing skills, and can also be used by individuals who are interested in improving their typing speed for personal or competitive reasons.</p>
+        </div>
+        <button> <a href="typing.html" style="text-decoration: none; display: block; color: white;"> Read more</a></button>
+      </div>
+
+      
+    </section>
+</main>
+
+  <footer style="background-color: #333; color: white; text-align: center; padding: 10px 20px;">
+
+    <p>Copyright 2021 My Website</p>
+
+  </footer>
+
+  <!-- script -->
+  <script>
+    // Initialize the game canvas
+    const canvas = document.getElementById('game-canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set the canvas size to the size of the window
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+    window.dispatchEvent(new Event('resize'));
+
+    // Draw the game on the canvas
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Draw game elements here
+      requestAnimationFrame(draw);
+    }
+    draw();
+  </script>
+  <script src="quiz.js"></script>
+</body>
+
+</html>

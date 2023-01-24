@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="quiz.css">
+    <title>Voice Sentance Game</title>
+
+</head>
+
+<style>
+
+
+</style>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../image_upload.html">Img Upload</a></li>
+                <li><a href="../blogPost.html">Blog</a></li>
+                <li><a href="../Quiz/quiz.html">Quiz</a></li>
+                <li><a href="game.html">Game</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="Account.html">Acount</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section style="text-align: center;">
+            <h1>Write Sentace and Listen to the sentance</h1>
+            <p>A voice sentence game is a computer program or online game that tests and measures a person's ability to listen to and accurately transcribe spoken sentences. These games typically involve listening to a series of spoken sentences and typing out the words that are spoken as accurately as possible within a certain time limit. The player's accuracy and speed in transcribing the spoken sentences is then measured and scored.</p>
+            <input type="text" id="input" placeholder="Write your sentance" style="font-size: 20px;">
+            <button id="speak-button" style="border-radius: 10px;">Speak</button>
+
+
+        </section>
+    </main>
+
+    <footer style="background-color: #333; color: white; text-align: center; padding: 10px 20px;">
+
+        <p>Copyright 2021 My Website</p>
+
+    </footer>
+
+    <script>
+
+        const synth = window.speechSynthesis;
+
+        function speak() {
+            // Get the user's input
+            const input = document.getElementById('input').value;
+
+            // Create a new SpeechSynthesisUtterance object
+            const utterance = new SpeechSynthesisUtterance(input);
+
+            // Set the language and voice of the utterance
+            utterance.lang = 'en-US';
+            utterance.voice = synth.getVoices()[0];
+
+            // Speak the utterance
+            synth.speak(utterance);
+        }
+
+        // Add a button to initiate speaking
+        document.getElementById('speak-button').addEventListener('click', speak);
+
+    </script>
+</body>
+
+</html>
